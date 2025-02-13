@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Optionally, you can add custom settings like environment variables:
+[build.environment]
+  NODE_ENV = "production"

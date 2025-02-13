@@ -11,6 +11,7 @@ const App = () => {
     <div className="App">
       <header className="header">
         <h1>Log &amp; GSC Data Analyzer</h1>
+<p>By Jan-Willem Bobbink</p>
         <nav className="nav">
           <button onClick={() => setView('upload')}>Upload Files</button>
           <button onClick={() => setView('dashboard')}>Dashboard</button>

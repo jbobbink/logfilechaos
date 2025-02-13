@@ -2,11 +2,11 @@ import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Dashboard = ({ data }) => {
-  // Dummy sample data; replace with processed log/GSC data
+  // Dummy sample data; replace with your actual processed data
   const sampleData = [
     { url: '/home', requests: 240 },
     { url: '/about', requests: 180 },
-    { url: '/contact', requests: 120 },
+    { url: '/contact', requests: 120 }
   ];
 
   return (
@@ -42,7 +42,7 @@ const Dashboard = ({ data }) => {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      {/* Additional cards for "URLs ranking but not crawled" and "URLs crawled but not ranking" can be added here */}
+      {/* Additional cards (e.g., for URLs not crawled/ranking) can be added here */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const FileUpload = ({ onDataProcessed }) => {
   const [previewFiles, setPreviewFiles] = useState([]);
 
   const onDrop = useCallback((acceptedFiles) => {
-    // Perform file validation here if needed
+    // Set preview file names
     setPreviewFiles(acceptedFiles.map(file => file.name));
 
     // Simulate upload progress
@@ -15,8 +15,8 @@ const FileUpload = ({ onDataProcessed }) => {
       setUploadProgress(prev => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Process file and update data
-          onDataProcessed({}); // Replace with actual processing logic
+          // Process file and update data (replace with actual processing logic)
+          onDataProcessed({}); 
           return 100;
         }
         return prev + 10;
@@ -30,9 +30,11 @@ const FileUpload = ({ onDataProcessed }) => {
     <div className="upload-container">
       <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
         <input {...getInputProps()} />
-        {isDragActive
-          ? <p>Drop the files here ...</p>
-          : <p>Drag &amp; drop log and GSC data files here, or click to select files.</p>}
+        {isDragActive ? (
+          <p>Drop the files here ...</p>
+        ) : (
+          <p>Drag &amp; drop log and GSC data files here, or click to select files.</p>
+        )}
       </div>
       {previewFiles.length > 0 && (
         <div className="preview">
